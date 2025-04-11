@@ -17,27 +17,26 @@
     <section id="login">
       <h1>Cadraste seus dados</h1>
       <div class="cada_nome">
-        <label for="cadas_nome">Nome</label>
+        <label for="cadas_nome">Email</label>
         <input
           type="text"
-          id="nome"
+          id="LoginEmail"
           name="nome"
-          placeholder="Digite seu nome"
+          placeholder="Digite seu Email"
           required
         />
       </div>
       <div class="cada_senha">
         <label for="cadas_senha">Senha</label>
         <input
-          type="text"
-          id="senha"
-          name="senha"
+          type="password"
+          id="LoginSenha"
+          name="Senha"
           placeholder="Digite sua Senha"
           required
         />
       </div>
-      <input id="Salvar" type="button" value="Salvar" />
-      <input id="Limpar" type="button" value="Limpar" />
+      <button id="Salvar" onclick="acessar()" type="submit">Entrar</button>
     </section>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
@@ -64,5 +63,5 @@
       quantity: 4.0,
     });
   </script>
-  <script src="js/main.js"></script>
+  <script src="java/main.js"></script>
 </html>
