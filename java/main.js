@@ -45,10 +45,15 @@ function criarLista() {
 
 // Função para excluir nome da lista
 function excluirUser(index) {
-   
+    dadosLista.splice(index, 1);
+    criarLista();
 }
 
 // Função para editar nome
 function editarUser(index) {
-    
+    let novoNome = prompt("Editar nome:", dadosLista[index]);
+    if (novoNome) {
+        dadosLista[index] = novoNome;
+        criarLista();
+    }
 }
