@@ -25,3 +25,9 @@ function salvarUser(){
         alert("Usuario não preenchido");
     }
 }
+
+// função para criar lista de nomes
+function criarLista(){
+    let tabela = "<table id=tabela><tr> <th>Nome</th> <th>Ações</th> </tr> </table>"
+    for(let i = 0; i <= (dadosLista.length));
+}
