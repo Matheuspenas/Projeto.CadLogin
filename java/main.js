@@ -1,33 +1,54 @@
-// validação de preenchimento de login
-function acessar(){
+// Validação de preenchimento de login
+function acessar() {
     let LoginEmail = document.getElementById('LoginEmail').value;
     let LoginSenha = document.getElementById('LoginSenha').value;
 
-    if(!LoginEmail || !LoginSenha){
-        alert("Favor preecher os campo de acesso corretamente");
-    } else{
-        window.location.href = 'cadrastro.html';
+    if (!LoginEmail || !LoginSenha) {
+        alert("Favor preencher os campos de acesso corretamente");
+    } else {
+        window.location.href = 'cadrastro.html'; // Verifique se o nome do arquivo está correto
     }
 }
-
-// declara Array para o projeto
 
 var dadosLista = [];
-// função de aramzenamento de nomes em Array
-function salvarUser(){
+
+// Função para armazenar nomes
+function salvarUser() {
     let nomeUser = document.getElementById('nomeUser').value;
 
-    if(nomeUser){
+    if (nomeUser) {
         dadosLista.push(nomeUser);
-        console.log.dadosLista;
-        nomeUser ="";
-    } else{
-        alert("Usuario não preenchido");
+        document.getElementById('nomeUser').value = "";
+        criarLista(); // Atualiza tabela automaticamente ao salvar
+    } else {
+        alert("Usuário não preenchido");
     }
 }
 
-// função para criar lista de nomes
-function criarLista(){
-    let tabela = "<table id=tabela><tr> <th>Nome</th> <th>Ações</th> </tr> </table>"
-    for(let i = 0; i <= (dadosLista.length));
+// Função para criar a tabela com botões de ação
+function criarLista() {
+    let tabela = "<tr><th>Nome</th><th>Ações</th></tr>";
+
+    for (let i = 0; i < dadosLista.length; i++) {
+        tabela += `
+            <tr>
+                <td>${dadosLista[i]}</td>
+                <td>
+                    <button class="btn" onclick="editarUser(${i})">Editar</button>
+                    <button class="btn" onclick="excluirUser(${i})">Excluir</button>
+                </td>
+            </tr>`;
+    }
+
+    document.getElementById('tabela').innerHTML = tabela;
+}
+
+// Função para excluir nome da lista
+function excluirUser(index) {
+   
+}
+
+// Função para editar nome
+function editarUser(index) {
+    
 }
